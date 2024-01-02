@@ -1,0 +1,21 @@
+[package]
+name = "starkpepe_postmorterm"
+version = "0.1.0"
+edition = "2023_10"
+
+# See more keys and their definitions at https://docs.swmansion.com/scarb/docs/reference/manifest.html
+
+[dependencies]
+snforge_std = { git = "https://github.com/foundry-rs/starknet-foundry", tag = "v0.13.1" }
+sncast_std = { git = "https://github.com/foundry-rs/starknet-foundry.git", tag = "v0.13.1" }
+starknet = "2.4.1"
+
+[[tool.snforge.fork]]
+name = "stark_fork"
+url = "https://free-rpc.nethermind.io/mainnet-juno/"
+block_id.number = "485251"
+
+
+[[target.starknet-contract]]
+casm = true
+
